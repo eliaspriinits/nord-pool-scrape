@@ -69,3 +69,7 @@ Kodutöös esitatud skript on mõeldud ühekordseks andmete kogumiseks kindla ku
 *   (Soovituslik) Tööriistad logide kogumiseks ja analüüsimiseks.
 
 Nende sammudega oleks võimalik luua usaldusväärne ja automatiseeritud süsteem elektrihindade igapäevaseks kogumiseks ja salvestamiseks.
+
+## Näited lisatud 25.05.2025 kohta:
+![img_1.png](example_images/table_example.png)
+![img.png](example_images/visualization_example.png)
