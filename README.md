@@ -31,7 +31,7 @@ Antud ülesande lahendamiseks kasutati Pythoni programmeerimiskeelt ja mitmeid s
 ### Leitud tulemused
 *   Skript kogub edukalt 24 tunnipõhist elektrihinda Nord Pooli lehelt valitud kuupäeva kohta Eesti hinnapiirkonnas.
 *   Andmed struktureeritakse korrektselt Pandas DataFrame'i, mis sisaldab kuupäeva, tunnivahemikku (tekstina), algustundi (numbrina) ja hinda (€/MWh).
-*   Arvutatakse ja kuvatakse päeva keskmine elektrihind. Näiteks, kuupäeva `2025-05-20` (testkuupäev) puhul leidis skript keskmise hinna (täpne väärtus sõltub päeva tegelikest andmetest).
+*   Arvutatakse ja kuvatakse päeva keskmine elektrihind. 
 *   Genereeritakse selge ja informatiivne visualiseering (nt `visualizations/nordpool_prices_20250520.png`), mis näitab elektrihinna kõikumist päeva lõikes ning päeva keskmist hinda.
 
 ## 2. Kasutatud programmide/teekide valiku põhjendus
@@ -54,9 +54,9 @@ Kodutöös esitatud skript on mõeldud ühekordseks andmete kogumiseks kindla ku
 4.  **Konfiguratsioonifailid**: Välised parameetrid (nt ooteajad, URL-i osad, andmebaasi ühenduse info) võiksid olla eraldi konfiguratsioonifailis, mitte otse koodis.
 
 ### B. Andmebaasi integratsioon:
-1.  **Andmebaasi valik**: Sõltuvalt mahust ja vajadustest võiks valida sobiva andmebaasi (nt PostgreSQL, MySQL, või lihtsamal juhul SQLite. Ajaseeriate jaoks InfluxDB).
-2.  **Andmebaasi skeem**: Luua andmebaasis tabel elektrihindade salvestamiseks (nt `electricity_prices` veergudega `price_timestamp` (või `date` ja `hour` eraldi), `price_eur_mwh`, `region`). Veenduda, et on olemas unikaalsuse tagamine (nt primaarvõti kuupäeval ja tunnil).
-3.  **Andmete sisestamine**: Lisada skripti kood, mis ühendub andmebaasiga (nt `psycopg2` PostgreSQL jaoks, `sqlite3` SQLite jaoks, või ORM nagu SQLAlchemy) ja sisestab kogutud andmed tabelisse. Tuleks käsitleda ka olukorda, kus andmed võivad juba olemas olla (nt `INSERT ... ON CONFLICT DO NOTHING` või uuendamine).
+1.  **Andmebaasi valik**: Sõltuvalt mahust ja vajadustest võiks valida sobiva andmebaasi.
+2.  **Andmebaasi skeem**: Luua andmebaasis tabel elektrihindade salvestamiseks (nt `electricity_prices` veergudega `price_timestamp` (või `date` ja `hour` eraldi), `price_eur_mwh`, `region`).
+3.  **Andmete sisestamine**: Lisada skripti kood, mis ühendub andmebaasiga ja sisestab kogutud andmed tabelisse. Tuleks käsitleda ka olukorda, kus andmed võivad juba olemas olla (nt `INSERT ... ON CONFLICT DO NOTHING` või uuendamine).
 
 ### C. Protsessi ajastamine ja monitooring:
 1.  **Ajastamine (Scheduling)**: Skripti regulaarseks käivitamiseks kasutada operatsioonisüsteemi ajastajat (nt `cron` Linuxis/macOS-is, Task Scheduler Windowsis) või spetsialiseeritud töövoo haldurit (nt Apache Airflow, Prefect).
