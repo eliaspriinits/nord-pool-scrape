@@ -50,7 +50,7 @@ Kodutöös esitatud skript on mõeldud ühekordseks andmete kogumiseks kindla ku
 ### A. Skripti muudatused:
 1.  **Dünaamiline kuupäeva määramine**: Skript peaks automaatselt määrama sihtkuupäevaks eelmise päeva (nt `datetime.now() - timedelta(days=1)`), et koguda alati värskeimad lõplikud päevahinnad.
 2.  **Robustne vigade käsitlemine ja logimine**: Lisada põhjalikum vigade püünised (nt `try-except` blokid kriitilistes kohtades) ja logimismehhanism (kasutades Pythoni `logging` moodulit), et salvestada skripti töö käik ja võimalikud probleemid (nt võrguvead, lehe struktuuri muutused).
-3.  **Korduskatsed (Retries)**: Implementeerida korduskatsete loogika juhuks, kui andmete laadimine ebaõnnestub ajutiste probleemide tõttu (nt Nord Pooli leht ei vasta kohe).
+3.  **Korduskatsed**: Implementeerida korduskatsete loogika juhuks, kui andmete laadimine ebaõnnestub ajutiste probleemide tõttu (nt Nord Pooli leht ei vasta kohe).
 4.  **Konfiguratsioonifailid**: Välised parameetrid (nt ooteajad, URL-i osad, andmebaasi ühenduse info) võiksid olla eraldi konfiguratsioonifailis, mitte otse koodis.
 
 ### B. Andmebaasi integratsioon:
